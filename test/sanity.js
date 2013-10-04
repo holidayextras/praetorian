@@ -5,16 +5,18 @@ var vows = require( 'vows' ),
 		assert = require( 'assert' );
 
 vows.describe( 'praetorian' ).addBatch( {
+
 		'frisk basic JSON': {
 			topic: function() {
 				// imagine up some data and a structure that should validate it
 				var data ={ 
 					name: 'kev',
-					size: 12
+					size: 12,
+					weight: 150
 				};
 
 				var structure = {
-					'agent': {
+					'name': {
 						'required': true,
 						'description': 'Name',
 						'validation': 'string'
@@ -22,11 +24,15 @@ vows.describe( 'praetorian' ).addBatch( {
 					'size': {
 						'description': 'Actually a length',
 						'validation': 'number'
+					},
+					'height': {
+						'description': 'Actually a height',
+						'validation': 'decimal'
 					}
 				};
 
-				// fire the frisk call
-				praetorian.frisk( data, structure, this.callback );
+				// fire the call
+				praetorian.check( data, structure, this.callback );
 			},
 			'execute frisk basic JSON': function( err, result ) {
 
@@ -35,6 +41,9 @@ vows.describe( 'praetorian' ).addBatch( {
 
 				// check the response isn't null either
 				assert.isNotNull( result );
+
+				// must be an object too
+				assert.isObject( result );
 
 			}			
 		}
