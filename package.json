@@ -1,0 +1,21 @@
+{
+	"name": "praetorian",
+	"version": "0.0.1",
+	"description": "A structured JSON parser and validator",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"dependencies": {
+		"underscore": "1.5.x",
+		"moment": "2.0.0"
+	},
+	"devDependencies": {
+		"mocha": "1.13.x"
+	},
+	"author": {
+		"name": "Kevin Hodges",
+		"email": "kevin.hodges@holidayextras.com"
+	},
+	"license": "MIT"
+}
