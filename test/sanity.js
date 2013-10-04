@@ -1,10 +1,10 @@
-// get doorman (so we can test it)
-var doorman = require( '../lib/doorman' );
+// get praetorian (so we can test it)
+var praetorian = require( '../lib/praetorian' );
 // and some testing stuff...
 var vows = require( 'vows' ),
 		assert = require( 'assert' );
 
-vows.describe( 'doorman' ).addBatch( {
+vows.describe( 'praetorian' ).addBatch( {
 		'frisk basic JSON': {
 			topic: function() {
 				// imagine up some data and a structure that should validate it
@@ -26,11 +26,11 @@ vows.describe( 'doorman' ).addBatch( {
 				};
 
 				// fire the frisk call
-				doorman.frisk( data, structure, this.callback );
+				praetorian.frisk( data, structure, this.callback );
 			},
 			'execute frisk basic JSON': function( err, result ) {
 
-				// errors thrown by doorman will be handled and return an err, to pass the value should be null				
+				// errors thrown by praetorian will be handled and return an err, to pass the value should be null				
 				assert.isNull( err );
 
 				// check the response isn't null either
