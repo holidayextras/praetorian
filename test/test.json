@@ -1,0 +1,152 @@
+// theme availability
+
+{ agent: 'LGD01',
+  adults: '2',
+  children: '2',
+  customerCode: 'T',
+  location: 'LLW',
+  nights: '1',
+  program: 'WIN',
+  room: 
+   [ { occupancyType: 'QUAD',
+       adults: '2',
+       children: '2',
+       infants: '0' } ],
+  identifier: '123456798',
+  arrivalDate: '2013-10-14',
+  ticketDate: '2013-10-07',
+  _: '1381130377531' }
+
+
+
+  // book theme availability request
+
+  { agent: 'LGD01',
+  customerCode: 'T',
+  operator: 'KLH',
+  transactionReference: '7654321',
+  title: 'Mr',
+  identifier: '123456789',
+  initial: 'T',
+  surname: 'Test',
+  address1: 'Shortbreaks',
+  address2: 'Newingreen',
+  address3: 'Nr Hythe',
+  town: 'Hythe',
+  county: 'Kent',
+  postcode: 'CT21 4JX',
+  country: 'GB',
+  telephone: '0123456789',
+  email: 'kevin.hodges@holidayextras.com',
+  remarks: '',
+  optIn: 'true',
+  paymentType: 'CyberCC',
+  deposit: 'false',
+  cancellationWaiver: '1',
+  creditCardSurcharge: '0.00',
+  bookerIsFirstRoomLead: 'true',
+  fraudCheck: '',
+  clientIp: '80.1.94.250',
+  totalIncVAT: '100.00',
+  currency: 'GBP',
+  binNumber: '411111',
+  cardType: 'CC',
+  roomInfo: 
+   { '0': 
+      { title: 'Mr',
+        initial: 'T',
+        surname: 'Test',
+        cot: 'false',
+        child: [Object] } },
+  ITEMS: 
+   [ { price: '222.79',
+       currency: 'GBP',
+       data: [Object],
+       checksum: '0418638970015edbfb6d54fb22f3f50e0b7c8798' } ] }
+
+
+// book theme availability response
+
+ {
+"header": {
+    "path": "/book",
+    "method": "post",
+    "environment": "development",
+    "hash": "e348af0e4858e88f8116a73a4b2a2e58",
+    "timestamp": "1381133012783"
+},
+"response": {
+    "general": {
+         "agent": "LGD01",
+         "customerCode": "T",
+         "transactionReference": "7654321"
+    },
+    "booking": [
+         {
+              "reference": "0AM9H",
+              "code": "LLW",
+              "providerReference": "37384",
+              "provider": "operaWebServices",
+              "type": "hotel",
+              "deposit": "false",
+              "paymentType": "CyberCC"
+         },
+         {
+              "reference": "0AM9G",
+              "code": "W2I",
+              "provider": "chauntry",
+              "type": "ticket",
+              "deposit": "false",
+              "paymentType": "CyberCC"
+         }
+    ]
+}
+}
+
+// firm request
+
+{
+     "header": {
+          "path": "/book",
+          "method": "put",
+          "environment": "development",
+          "hash": "3a5bc668f63fa5518ef8bfee208e96d2",
+          "timestamp": "1381134043232"
+     },
+     "response": {
+          "general": {
+               "agent": "LGD01",
+               "customerCode": "T",
+               "transactionReference": "7654321"
+          },
+          "firming": [
+               {
+                    "reference": "0AM9H",
+                    "price": "103.09",
+                    "success": "true"
+               },
+               {
+                    "reference": "0AM9G",
+                    "price": "119.70",
+                    "success": "true"
+               }
+          ]
+     }
+}
+
+firm response
+
+{ agent: 'LGD01',
+  customerCode: 'T',
+  operator: 'KLH',
+  transactionReference: '7654321',
+  identifier: '123456789',
+  authorisationToken: '01234567890123456',
+  deposit: 'false',
+  paymentType: 'CyberCC',
+  booking: 
+   { '0': 
+      { reference: '0AM9H',
+        provider: 'operaWebServices',
+        type: 'hotel' },
+     '1': { reference: '0AM9G', provider: 'chauntry', type: 'ticket' } } }
