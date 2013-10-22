@@ -32,7 +32,7 @@ vows.describe( 'praetorian' ).addBatch( {
 				};
 
 				// fire the call
-				praetorian.check( data, structure, this.callback );
+				praetorian.validate( data, structure, this.callback );
 			},
 			'execute frisk basic JSON': function( err, result ) {
 

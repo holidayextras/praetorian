@@ -1,3 +1,10 @@
+// ITEMS, have a hash
+
+// STRUCTURES
+
+
+
+
 var data = { 
 	name: 'kev',
 	size: 12,
@@ -46,21 +53,27 @@ var structure = {
 	}
 };
 
+// structure = 'hey';
+
 // fire up Praetorian
 var Praetorian = require( '../index' );
 praetorian = new Praetorian();
 
 // check shit
-praetorian.check( data, structure, function( err, data ) {
+praetorian.validate( data, structure, function( err, data ) {
 		
 		if( err ) {
-			console.log( 'check err', err );
+			
+			// console.log( 'check err', err );
+
 			praetorian.requirements( structure, function( err, data ) {
+
 				if( err ) {
-					console.log( 'requirements err', err );
+					// console.log( 'requirements err', err );
 				} else {
-					console.log( 'requirements success', data );		
+					// console.log( 'requirements success', data );		
 				}
+
 			} );
 		} else {
 			console.log( 'check success', data );
