@@ -1,14 +1,13 @@
 // ITEMS, have a hash
 
 // STRUCTURES
-
-
-
+// 
+// type: checksum????
 
 var data = { 
 	name: 'kev',
 	size: 12,
-	weight: 150
+	weight: '150'
 };
 
 var structure = {
@@ -32,11 +31,11 @@ var structure = {
 			'example': 'Must be an integer e.g. 1'
 		}
 	},
-	'height': {
-		'description': 'Actually a height',
+	'weight': {
+		'description': 'Actually a weight',
 		'validation': {
 			'rules': {
-				'type': 'integer'
+				'type': 'stringInteger'
 			},
 			'example': 'Must be an integer e.g. 1'
 		}
@@ -62,9 +61,11 @@ praetorian = new Praetorian();
 // check shit
 praetorian.validate( data, structure, function( err, data ) {
 		
+		// console.log( 'praetorian.errors', praetorian.errors );
+
 		if( err ) {
 			
-			// console.log( 'check err', err );
+			console.log( 'check err', err );
 
 			praetorian.requirements( structure, function( err, data ) {
 
