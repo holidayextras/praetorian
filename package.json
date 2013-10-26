@@ -3,6 +3,7 @@
 	"version": "0.0.2",
 	"description": "A structured JSON parser and validator",
 	"main": "index.js",
+	"license": "MIT",
 	"directories": {
 		"test": "./test",
 		"lib": "./lib"
@@ -18,5 +19,8 @@
 		"name": "Kevin Hodges",
 		"email": "kevin.hodges@holidayextras.com"
 	},
-	"license": "MIT"
+	"repository" : {
+		"type" : "git",
+		"url" : "http://github.com/kevinhodges/praetorian.git"
+  }
 }

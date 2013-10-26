@@ -23,11 +23,7 @@ vows.describe( 'praetorian' ).addBatch( {
 					},
 					'size': {
 						'description': 'Actually a length',
-						'validation': 'number'
-					},
-					'height': {
-						'description': 'Actually a height',
-						'validation': 'decimal'
+						'validation': 'integer'
 					}
 				};
 
