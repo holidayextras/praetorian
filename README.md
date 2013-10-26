@@ -41,13 +41,11 @@ praetorian.validate( data, structure, function( err, data ) {
 Testing
 --
 
-To run the test harness do the following:
+Run the test harness do the following:
 ```sh
 cd praetorian
 node test/sanity.js
 ```
 License
 --
-MIT
-
-*Free Software, Hell Yeah!*
+[MIT](http://en.wikipedia.org/wiki/MIT_License "MIT")
