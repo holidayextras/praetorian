@@ -4,62 +4,92 @@
 // 
 // type: checksum????
 
-var data = { 
+var json = { 
 	name: 'kev',
 	size: 12,
 	weight: '150'
 };
 
-var structure = {
-	'name': {
-		'required': true,
-		'description': 'Name',
-		'validation': {
-			'rules': {
-				'type': 'string'
-			},
-			'example': 'Ipsum lorem'
-		}
+// var schema = {
+// 	'name': {
+// 		'required': true,
+// 		'description': 'Name',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'string'
+// 			},
+// 			'example': 'Ipsum lorem'
+// 		}
+// 	},
+// 	'size': {
+// 		'required': false,
+// 		'description': 'Actually a size',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'integer'
+// 			},
+// 			'example': 'Must be an integer e.g. 1'
+// 		}
+// 	},
+// 	'weight': {
+// 		'description': 'Actually a weight',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'stringInteger'
+// 			},
+// 			'example': 'Must be an integer e.g. 1'
+// 		}
+// 	},
+// 	'width': {
+// 		'required': true,
+// 		'description': 'Actually a width',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'integer'
+// 			},
+// 			'example': 'Must be an integer e.g. 1'
+// 		}
+// 	}
+// };
+
+
+var schema = {
+	arrivalDate: {
+		required: true,
+		description: 'Hotel arrival date',
+		type: 'STRING'
 	},
-	'size': {
-		'required': false,
-		'description': 'Actually a size',
-		'validation': {
-			'rules': {
-				'type': 'integer'
+	person: {
+		required: true,
+		type: 'ARRAY',
+		properties: {
+			adults: {
+				required: true,
+				description: 'Number of adults in the room',
+				type: 'INTEGER'
 			},
-			'example': 'Must be an integer e.g. 1'
-		}
-	},
-	'weight': {
-		'description': 'Actually a weight',
-		'validation': {
-			'rules': {
-				'type': 'stringInteger'
-			},
-			'example': 'Must be an integer e.g. 1'
-		}
-	},
-	'width': {
-		'required': true,
-		'description': 'Actually a width',
-		'validation': {
-			'rules': {
-				'type': 'integer'
-			},
-			'example': 'Must be an integer e.g. 1'
+			rooms: {
+				required: true,
+				type: 'OBJECT',
+				description: 'Number of children in the room',
+				properties: {
+					children: {
+						required: true,
+						description: 'Number of adults in the room',
+						type: 'INTEGER'
+					}
+				}
+			}
 		}
 	}
 };
-
-// structure = 'hey';
 
 // fire up Praetorian
 var Praetorian = require( '../index' );
 praetorian = new Praetorian();
 
 // check shit
-praetorian.validate( data, structure, function( err, data ) {
+praetorian.validate( json, schema, function( err, data ) {
 		
 		// console.log( 'praetorian.errors', praetorian.errors );
 

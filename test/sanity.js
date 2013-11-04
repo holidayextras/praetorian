@@ -15,17 +15,48 @@ vows.describe( 'praetorian' ).addBatch( {
 					weight: 150
 				};
 
-				var structure = {
-					'name': {
-						'required': true,
-						'description': 'Name',
-						'validation': 'string'
+				// var structure = {
+				// 	'name': {
+				// 		'required': true,
+				// 		'description': 'Name',
+				// 		'validation': 'string'
+				// 	},
+				// 	'size': {
+				// 		'description': 'Actually a length',
+				// 		'validation': 'integer'
+				// 	}
+				// };
+
+				var json = {
+					arrivalDate: {
+						required: true,
+						description: 'Hotel arrival date',
+						type: 'STRING'
 					},
-					'size': {
-						'description': 'Actually a length',
-						'validation': 'integer'
+					person: {
+						required: true,
+						type: 'ARRAY',
+						properties: {
+							adults: {
+								required: true,
+								description: 'Number of adults in the room',
+								type: 'INTEGER'
+							},
+							rooms: {
+								required: true,
+								type: 'OBJECT',
+								description: 'Number of children in the room',
+								properties: {
+									children: {
+										required: true,
+										description: 'Number of adults in the room',
+										type: 'INTEGER'
+									}
+								}
+							}
+						}
 					}
-				};
+				}
 
 				// fire the call
 				praetorian.validate( data, structure, this.callback );
