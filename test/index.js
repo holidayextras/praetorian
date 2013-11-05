@@ -5,9 +5,18 @@
 // type: checksum????
 
 var json = { 
-	name: 'kev',
-	size: 12,
-	weight: '150'
+	arrivalDate: '2013-12-25',
+	colour: 'blue',
+	person: [
+		{
+			arrivalDate: '',
+			adults: 2,
+			rooms: {
+				occupancyType: 'DBL',
+				children: 2
+			}
+		}
+	]
 };
 
 // var schema = {
@@ -63,6 +72,11 @@ var schema = {
 		required: true,
 		type: 'ARRAY',
 		properties: {
+			arrivalDate: {
+				required: true,
+				description: 'Hotel arrival date',
+				type: 'STRING'
+			},
 			adults: {
 				required: true,
 				description: 'Number of adults in the room',
