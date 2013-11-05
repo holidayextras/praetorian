@@ -66,31 +66,31 @@ var schema = {
 	arrivalDate: {
 		required: true,
 		description: 'Hotel arrival date',
-		type: 'STRING'
+		type: 'string'
 	},
 	person: {
 		required: true,
-		type: 'ARRAY',
+		type: 'array',
 		properties: {
 			arrivalDate: {
 				required: true,
 				description: 'Hotel arrival date',
-				type: 'STRING'
+				type: 'string'
 			},
 			adults: {
 				required: true,
 				description: 'Number of adults in the room',
-				type: 'INTEGER'
+				type: 'integer'
 			},
 			rooms: {
 				required: true,
-				type: 'OBJECT',
+				type: 'object',
 				description: 'Number of children in the room',
 				properties: {
 					children: {
 						required: true,
 						description: 'Number of adults in the room',
-						type: 'INTEGER'
+						type: 'integer'
 					}
 				}
 			}
