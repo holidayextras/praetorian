@@ -1,28 +1,57 @@
 var _ = require( 'underscore' );
 // ITEMS, have a hash
 
+var validationRoutines = {
+	threeToSixCharacterString: {
+		'rules': {
+			'type': 'string',
+			'length': {
+				'min': 3,
+				'max': 6
+			},
+		},
+		'example': 'Must be a 3 or 6 character string e.g. "ABC or ABCDEF"'
+	},
+	string: {
+		'rules': {
+			'type': 'string'
+		},
+		'example': 'Must be an string e.g. "hello world"'
+	},
+	integer: {
+		'rules': {
+			'type': 'integer'
+		},
+		'example': 'Must be an integer e.g. 1'
+	}
+}
+
 // STRUCTURES
 // 
 // type: checksum????
 
 var jsonBefore = { 
 	arrivalDate: '2013-12-25',
-	colour: 'blue',
+	colour: 'AB',
 	person: [
 		{
 			arrivalDate: '',
+			hotelCode: 'ABCDE',
 			adults: 2,
 			rooms: {
 				occupancyType: 'DBL',
 				children: 2
+			},
+			validArray: {
+
 			},
 			invalidObject: {
 				foo: 'bar'
 			}
 		}
 	],
-	validObject:{
-	},
+	validObject: [
+	],
 	invalidArray: [
 	],
 	invalidObject: {
@@ -33,18 +62,21 @@ var jsonBefore = {
 
 var jsonAfter = { 
 	arrivalDate: '2013-12-25',
+	colour: 'ABC',
 	person: [
 		{
 			arrivalDate: '',
+			hotelCode: 'ABCDEF',
 			adults: 2,
 			rooms: {
 				children: 2
-			}
+			},
+			validArray: [
+			]
 		}
 	],
-	validObject: {
-
-	}
+	validObject: [
+	]
 };
 
 
@@ -53,7 +85,14 @@ var schema = {
 	arrivalDate: {
 		required: true,
 		description: 'Hotel arrival date',
-		type: 'string'
+		type: 'string',
+		validation: validationRoutines.string
+	},
+	colour: {
+		required: true,
+		description: 'Colour code',
+		type: 'string',
+		validation: validationRoutines.threeToSixCharacterString
 	},
 	person: {
 		required: true,
@@ -63,6 +102,12 @@ var schema = {
 				required: true,
 				description: 'Hotel arrival date',
 				type: 'string'
+			},
+			hotelCode: {
+				required: true,
+				description: 'Hotel code',
+				type: 'string',
+				validation: validationRoutines.threeToSixCharacterString
 			},
 			adults: {
 				required: true,
@@ -79,6 +124,13 @@ var schema = {
 						description: 'Number of adults in the room',
 						type: 'integer'
 					}
+				}
+			},
+			validArray: {
+				required: true,
+				type: 'array',
+				properties: {
+
 				}
 			}
 		}
@@ -100,32 +152,32 @@ praetorian = new Praetorian();
 praetorian.validate( jsonBefore, schema, function( err, data ) {
 		
 		// console.log( 'praetorian.errors', praetorian.errors );
-		console.log( 'what came back' );
-		console.log( data.person );
-		console.log( 'what it should be like' );
-		console.log( jsonAfter.person );
+		// console.log( 'what came back' );
+		// console.log( data.person );
+		// console.log( 'what it should be like' );
+		// console.log( jsonAfter.person );
 
 		// ensure what comes back looks like it should do
-		if( _.isEqual( data, jsonAfter ) ) {
-			console.log( 'CLEAN SUCCESS' );
-		} else {
-			console.log( 'CLEAN ERROR' );
-		}
+		// if( _.isEqual( data, jsonAfter ) ) {
+		// 	console.log( 'CLEAN SUCCESS' );
+		// } else {
+		// 	console.log( 'CLEAN ERROR' );
+		// }
 
 
 		if( err ) {
 			
-			// console.log( 'check err', err );
+			console.log( 'check err', err );
 
-			// praetorian.requirements( structure, function( err, data ) {
+			praetorian.requirements( schema, function( err, data ) {
 
-			// 	if( err ) {
-			// 		// console.log( 'requirements err', err );
-			// 	} else {
-			// 		// console.log( 'requirements success', data );		
-			// 	}
+				if( err ) {
+					// console.log( 'requirements err', err );
+				} else {
+					// console.log( 'requirements success', data );		
+				}
 
-			// } );
+			} );
 		} else {
 			// console.log( 'check success', data );
 		}
