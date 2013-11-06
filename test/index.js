@@ -1,10 +1,11 @@
+var _ = require( 'underscore' );
 // ITEMS, have a hash
 
 // STRUCTURES
 // 
 // type: checksum????
 
-var json = { 
+var jsonBefore = { 
 	arrivalDate: '2013-12-25',
 	colour: 'blue',
 	person: [
@@ -14,52 +15,33 @@ var json = {
 			rooms: {
 				occupancyType: 'DBL',
 				children: 2
+			},
+			invalidObject: {
+				foo: 'bar'
+			}
+		}
+	],
+	invalidArray: [
+	],
+	invalidObject: {
+
+	}
+};
+
+
+var jsonAfter = { 
+	arrivalDate: '2013-12-25',
+	person: [
+		{
+			arrivalDate: '',
+			adults: 2,
+			rooms: {
+				children: 2
 			}
 		}
 	]
 };
 
-// var schema = {
-// 	'name': {
-// 		'required': true,
-// 		'description': 'Name',
-// 		'validation': {
-// 			'rules': {
-// 				'type': 'string'
-// 			},
-// 			'example': 'Ipsum lorem'
-// 		}
-// 	},
-// 	'size': {
-// 		'required': false,
-// 		'description': 'Actually a size',
-// 		'validation': {
-// 			'rules': {
-// 				'type': 'integer'
-// 			},
-// 			'example': 'Must be an integer e.g. 1'
-// 		}
-// 	},
-// 	'weight': {
-// 		'description': 'Actually a weight',
-// 		'validation': {
-// 			'rules': {
-// 				'type': 'stringInteger'
-// 			},
-// 			'example': 'Must be an integer e.g. 1'
-// 		}
-// 	},
-// 	'width': {
-// 		'required': true,
-// 		'description': 'Actually a width',
-// 		'validation': {
-// 			'rules': {
-// 				'type': 'integer'
-// 			},
-// 			'example': 'Must be an integer e.g. 1'
-// 		}
-// 	}
-// };
 
 
 var schema = {
@@ -103,25 +85,33 @@ var Praetorian = require( '../index' );
 praetorian = new Praetorian();
 
 // check shit
-praetorian.validate( json, schema, function( err, data ) {
+praetorian.validate( jsonBefore, schema, function( err, data ) {
 		
 		// console.log( 'praetorian.errors', praetorian.errors );
 
+		// ensure what comes back looks like it should do
+		if( _.isEqual( data, jsonAfter ) ) {
+			console.log( 'CLEAN SUCCESS' );
+		} else {
+			console.log( 'CLEAN ERROR' );
+		}
+
+
 		if( err ) {
 			
-			console.log( 'check err', err );
+			// console.log( 'check err', err );
 
-			praetorian.requirements( structure, function( err, data ) {
+			// praetorian.requirements( structure, function( err, data ) {
 
-				if( err ) {
-					// console.log( 'requirements err', err );
-				} else {
-					// console.log( 'requirements success', data );		
-				}
+			// 	if( err ) {
+			// 		// console.log( 'requirements err', err );
+			// 	} else {
+			// 		// console.log( 'requirements success', data );		
+			// 	}
 
-			} );
+			// } );
 		} else {
-			console.log( 'check success', data );
+			// console.log( 'check success', data );
 		}
 } );
 
@@ -231,3 +221,46 @@ praetorian.validate( json, schema, function( err, data ) {
 
 
 // console.log( 'doorman.cleanedData', doorman.cleanedData );
+
+
+// var schema = {
+// 	'name': {
+// 		'required': true,
+// 		'description': 'Name',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'string'
+// 			},
+// 			'example': 'Ipsum lorem'
+// 		}
+// 	},
+// 	'size': {
+// 		'required': false,
+// 		'description': 'Actually a size',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'integer'
+// 			},
+// 			'example': 'Must be an integer e.g. 1'
+// 		}
+// 	},
+// 	'weight': {
+// 		'description': 'Actually a weight',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'stringInteger'
+// 			},
+// 			'example': 'Must be an integer e.g. 1'
+// 		}
+// 	},
+// 	'width': {
+// 		'required': true,
+// 		'description': 'Actually a width',
+// 		'validation': {
+// 			'rules': {
+// 				'type': 'integer'
+// 			},
+// 			'example': 'Must be an integer e.g. 1'
+// 		}
+// 	}
+// };
