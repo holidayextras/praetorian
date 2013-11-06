@@ -21,6 +21,8 @@ var jsonBefore = {
 			}
 		}
 	],
+	validObject:{
+	},
 	invalidArray: [
 	],
 	invalidObject: {
@@ -39,7 +41,10 @@ var jsonAfter = {
 				children: 2
 			}
 		}
-	]
+	],
+	validObject: {
+
+	}
 };
 
 
@@ -77,6 +82,13 @@ var schema = {
 				}
 			}
 		}
+	},
+	validObject: {
+		required: true,
+		type: 'object',
+		properties: {
+
+		}
 	}
 };
 
@@ -88,6 +100,10 @@ praetorian = new Praetorian();
 praetorian.validate( jsonBefore, schema, function( err, data ) {
 		
 		// console.log( 'praetorian.errors', praetorian.errors );
+		console.log( 'what came back' );
+		console.log( data.person );
+		console.log( 'what it should be like' );
+		console.log( jsonAfter.person );
 
 		// ensure what comes back looks like it should do
 		if( _.isEqual( data, jsonAfter ) ) {
