@@ -1,65 +1,114 @@
 // get praetorian (so we can test it)
-var praetorian = require( '../lib/praetorian' );
+var Praetorian = require( '../index' );
+praetorian = new Praetorian();
+
 // and some testing stuff...
 var vows = require( 'vows' ),
 		assert = require( 'assert' );
+
+// var validationRoutines = {
+// 	threeToSixCharacterString: {
+// 		'rules': {
+// 			'type': 'string',
+// 			'length': {
+// 				'min': 3,
+// 				'max': 6
+// 			},
+// 		},
+// 		'example': 'Must be a 3 or 6 character string e.g. "ABC or ABCDEF"'
+// 	},
+// 	string: {
+// 		'rules': {
+// 			'type': 'string'
+// 		},
+// 		'example': 'Must be an string e.g. "hello world"'
+// 	},
+// 	integer: {
+// 		'rules': {
+// 			'type': 'integer'
+// 		},
+// 		'example': 'Must be an integer e.g. 1'
+// 	}
+// }
 
 vows.describe( 'praetorian' ).addBatch( {
 
 		'frisk basic JSON': {
 			topic: function() {
-				// imagine up some data and a structure that should validate it
-				var data ={ 
-					name: 'kev',
-					size: 12,
-					weight: 150
+				// imagine up some data and a schema it should validate against
+				var json = { 
+					model: 'Ford',
+					car: [
+						{
+							colour: 'red',
+							seats: {
+								remove: true,
+								front: 2
+							},
+							removeArray: [
+							],
+							removeObject: {
+							}
+						}
+					],
+					removeArray: [
+					],
+					removeObject: {
+					},
+					trailer: {
+						size: 3,
+						remove: 7,
+						removeArray: [
+						],
+						removeObject: {							
+						}
+					}
 				};
 
-				// var structure = {
-				// 	'name': {
-				// 		'required': true,
-				// 		'description': 'Name',
-				// 		'validation': 'string'
-				// 	},
-				// 	'size': {
-				// 		'description': 'Actually a length',
-				// 		'validation': 'integer'
-				// 	}
-				// };
-
-				var json = {
-					arrivalDate: {
+				var schema = {
+					model: {
 						required: true,
-						description: 'Hotel arrival date',
-						type: 'STRING'
+						description: 'Car model',
+						type: 'string'
 					},
-					person: {
+					car: {
 						required: true,
-						type: 'ARRAY',
+						type: 'array',
 						properties: {
-							adults: {
+							colour: {
 								required: true,
-								description: 'Number of adults in the room',
-								type: 'INTEGER'
+								description: 'A colour',
+								type: 'string'
 							},
-							rooms: {
+							seats: {
 								required: true,
-								type: 'OBJECT',
-								description: 'Number of children in the room',
+								type: 'object',
+								description: 'Breakdown of seats',
 								properties: {
-									children: {
+									front: {
 										required: true,
-										description: 'Number of adults in the room',
-										type: 'INTEGER'
+										description: 'Number of seats in the front',
+										type: 'integer'
 									}
 								}
 							}
 						}
+					},
+					trailer: {
+						required: true,
+						type: 'object',
+						properties: {
+							size: {
+								required: true,
+								type: 'integer',
+								description: 'Length of trailer',
+							}
+						}
 					}
-				}
+				};
 
 				// fire the call
-				praetorian.validate( data, structure, this.callback );
+				praetorian.validate( json, schema, this.callback );
 			},
 			'execute frisk basic JSON': function( err, result ) {
 
@@ -71,6 +120,24 @@ vows.describe( 'praetorian' ).addBatch( {
 
 				// must be an object too
 				assert.isObject( result );
+
+				// now check that the result json (cleaned data) is EXACTLY what we expect it to be
+				var expected = { 
+					model: 'Ford',
+					car: [
+						{
+							colour: 'red',
+							seats: {
+								front: 2
+							}
+						}
+					],
+					trailer: {
+						size: 3
+					}
+				};
+
+				assert.deepEqual( result, expected );
 
 			}			
 		}
