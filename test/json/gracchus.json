@@ -57,7 +57,7 @@
 		"shapes": {
 			"required": true,
 			"type": "array",
-			"properties": {
+			"items": {
 				"circle": {
 					"required": true
 				},
@@ -69,7 +69,7 @@
 		"sounds": {
 			"required": false,
 			"type": "array",
-			"properties": {
+			"items": {
 				"woof": {
 					"required": true
 				},

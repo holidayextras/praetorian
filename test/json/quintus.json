@@ -36,7 +36,7 @@
 		"car": {
 			"required": true,
 			"type": "array",
-			"properties": {
+			"items": {
 				"colour": {
 					"required": true,
 					"description": "A colour",

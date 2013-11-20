@@ -5,7 +5,7 @@
 			"length": {
 				"min": 3,
 				"max": 6
-			},
+			}
 		},
 		"example": "Must be a 3 or 6 character string e.g. \"ABC or ABCDEF\""
 	},

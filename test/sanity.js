@@ -5,7 +5,10 @@ praetorian = new Praetorian( { debug: true } ); //
 // and some testing stuff...
 var vows = require( 'vows' ),
 		assert = require( 'assert' );
-		
+
+
+var configuration = require( '../lib/configuration' );
+
 // Data sanitising: this should strip out all invalid properties
 var quintus = require( './json/quintus' );
 // Data verification: ensures you have passed everything required, note we're not 
@@ -15,6 +18,19 @@ var gracchus = require( './json/gracchus' );
 // Data verification: check that required fields that arent passed in json add an error
 // this will throw exactly 7 errors
 var gaius = require( './json/gaius' );
+// Data validation
+var falco = {
+	"json": {
+		"weapon": "sword"
+	},
+	"schema": {
+		"weapon": {
+			"validation": configuration.integer
+		}
+	},
+	"expected": {
+	}
+}
 
 vows.describe( 'praetorian' ).addBatch( {
 
@@ -74,6 +90,21 @@ vows.describe( 'praetorian' ).addBatch( {
 
 				// should be exactly 7 errors, one for each of the required: true root properties
 				assert.equal( err.length, 7 );
+
+			}
+		},
+
+		'falco': {
+			topic: function() {
+				// fire the call
+				praetorian.validate( falco.json, falco.schema, this.callback );
+			},
+			'execute falco': function( err, result ) {
+
+				console.log( 'falco result', result );
+				console.log( 'falco err', err );
+
+				
 
 			}
 		}

@@ -13,6 +13,37 @@ Installation
 ```sh
 $ npm install praetorian
 ```
+Schema
+--
+Example:
+```sh
+{
+    "shield": {
+        "required": true
+        "validation": {
+
+        }
+    },
+    "weapon": {
+        "required": true
+        "type": "array",
+        "items": {
+            "sword": {
+                "validation": {
+
+                }
+            },
+            "dagger": {
+                "required": true
+            }
+        }
+    }
+}
+```
+Notes:
+* Type only needs to be specified if it's ARRAY or OBJECT
+* Validation configuration should be used to ensure any type dependencies are met
+- 
 Usage
 --
 ```sh
