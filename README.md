@@ -43,7 +43,7 @@ Example:
 Notes:
 * Type only needs to be specified if it's ARRAY or OBJECT
 * Validation configuration should be used to ensure any type dependencies are met
-- 
+
 Usage
 --
 ```sh
@@ -72,7 +72,7 @@ praetorian.validate( data, structure, function( err, data ) {
 Testing
 --
 
-Run the test harness do the following:
+To run the test harness do the following:
 ```sh
 cd praetorian
 node test/sanity.js
