@@ -1,6 +1,6 @@
 // get praetorian (so we can test it)
 var Praetorian = require( '../index' );
-praetorian = new Praetorian(); // { debug: true }
+praetorian = new Praetorian( { debug: true } ); // 
 
 // and some testing stuff...
 var vows = require( 'vows' ),
@@ -15,7 +15,6 @@ var gracchus = require( './json/gracchus' );
 // Data verification: check that required fields that arent passed in json add an error
 // this will throw exactly 7 errors
 var gaius = require( './json/gaius' );
-
 
 vows.describe( 'praetorian' ).addBatch( {
 

@@ -1,0 +1,104 @@
+{
+	"json": {
+		"cars": true,
+		"sword": true,
+		"animals": {
+			"cow": true,
+			"sheep": true
+		},
+		"colours": {
+			"red": true,
+			"blue": true
+		},
+		"shapes": [
+			{
+				"circle": true,
+				"square": true
+			},
+			{
+				"circle": true,
+				"square": true
+			}
+		]
+			
+	},
+	"schema": {
+		"cars": {
+			"required": false
+		},
+		"sword": {
+			"required": true
+		},
+		"animals": {
+			"required": true,
+			"type": "object",
+			"properties": {
+				"cow": {
+					"required": true
+				},
+				"sheep": {
+					"required": false
+				}
+
+			}
+		},
+		"colours": {
+			"required": false,
+			"type": "object",
+			"properties": {
+				"red": {
+					"required": true
+				},
+				"blue": {
+					"required": false
+				}
+			}
+		},
+		"shapes": {
+			"required": true,
+			"type": "array",
+			"properties": {
+				"circle": {
+					"required": true
+				},
+				"square": {
+					"required": false
+				}
+			}
+		},
+		"sounds": {
+			"required": false,
+			"type": "array",
+			"properties": {
+				"woof": {
+					"required": true
+				},
+				"meow": {
+					"required": false
+				}
+			}
+		}
+	},
+	"expected": {
+		"cars": true,
+		"sword": true,
+		"animals": {
+			"cow": true,
+			"sheep": true
+		},
+		"colours": {
+			"red": true,
+			"blue": true
+		},
+		"shapes": [
+			{
+				"circle": true,
+				"square": true
+			},
+			{
+				"circle": true,
+				"square": true
+			}
+		]
+	}
+}

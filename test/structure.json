@@ -1,0 +1,157 @@
+/*
+
+This is the sort of stuff we need to be able to validate in full
+
+'arrivalDate': {
+  required: true,
+  description: 'Hotel arrival date',
+  type: doormanConfig.date
+},
+person: {
+  required: true,
+  type: 'ARRAY',
+  properties: {
+    adults: {
+      required: true,
+      description: 'Number of adults in the room',
+      type: doormanConfig.integer
+    },
+    'rooms': {
+      required: true,
+      type: 'OBJECT',
+      description: 'Number of children in the room',
+      properties: {
+        
+      }
+    },
+  }
+}
+
+validates
+
+person: {
+  [ 
+    {
+      {
+        name: 'Kev' 
+      },
+      {
+        age: 2
+      }
+    },
+    {
+      {
+        name: 'Kev' 
+      },
+      {
+        age: 2
+      }
+    }
+  ]
+
+}
+
+
+person: {
+  required: true,
+  OBJECT: {
+    {
+      name: ''
+    },
+    {
+      age: ''
+    }
+  }
+}
+
+*/
+
+var fields = {
+    'agent': {
+      'required': true,
+      'description': 'ABTA number'
+    },
+    'adults': {
+      'required': true,
+      'description': 'Number of adults in the party',
+      'validation': doormanConfig.integer
+    },
+    'arrivalDate': {
+      'required': true,
+      'description': 'Hotel arrival date',
+      'validation': doormanConfig.date
+    },
+    'children': {
+      'required': false,
+      'description': 'Number of children in the party',
+      'validation': doormanConfig.integer
+    },
+    'customerCode': {
+      'required': true,
+      'description': 'Code signifying the customer code of the query',
+      'validation': doormanConfig.characterCode(1)
+    },
+    'location': {
+      'required': true,
+      'description': 'Ticket location code',
+      'validation': doormanConfig.characterCode(3)
+    },
+    'nights': {
+      'required': true,
+      'description': 'Number of nights of hotel stay',
+      'validation': doormanConfig.integer
+    },
+    'program': {
+      'required': true,
+      'description': 'Hotel program code',
+      'validation': doormanConfig.threeOrSixCharacterCode
+    },
+    'room': {
+      'required': true,
+      'ARRAY': {
+        'adults': {
+          'required': true,
+          'description': 'Number of adults in the room',
+          'validation': doormanConfig.integer
+        },
+        'children': {
+          'required': true,
+          'description': 'Number of children in the room',
+          'validation': doormanConfig.integer
+        },
+        'occupancyType': {
+          'required': true,
+          'description': 'Type of occupancy of the the room',
+          'validation': doormanConfig.occupancyType
+        },
+        'infants': {
+          'description': 'Number of infants in the room',
+          'validation': doormanConfig.integer
+        }
+      }
+    },
+    'customer': {
+      'required': true,
+      'OBJECT': {
+        'initial': {
+          'required': true,
+          'description': 'Initial of someone',
+          'validation': doormanConfig.string
+        },
+        'surname': {
+          'required': true,
+          'description': 'Surname of someone',
+          'validation': doormanConfig.string
+        }
+      }
+    },
+    'identifier': {
+      'required': true,
+      'description': 'An identifier'
+    },
+    'ticketDate': {
+      'required': true,
+      'description': 'Date the ticket is required',
+      'validation': doormanConfig.date
+    }
+  };

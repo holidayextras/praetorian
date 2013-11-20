@@ -1,0 +1,90 @@
+{
+	"json": {
+		"tree": {
+		},
+		"drink": [
+			{},
+			{
+				"water": true
+			}
+		]
+	},
+	"schema": {
+		"helmet": {
+			"required": false
+		},
+		"shield": {
+			"required": true
+		},
+		"food": {
+			"required": true,
+			"type": "object",
+			"properties": {
+				"bread": {
+					"required": true
+				},
+				"meat": {
+					"required": false
+				}
+
+			}
+		},
+		"weapons": {
+			"required": false,
+			"type": "object",
+			"properties": {
+				"sword": {
+					"required": true
+				},
+				"dagger": {
+					"required": false
+				}
+			}
+		},
+		"horse": {
+			"required": true,
+			"type": "array",
+			"properties": {
+				"head": {
+					"required": true
+				},
+				"legs": {
+					"required": false
+				}
+			}
+		},
+		"house": {
+			"required": false,
+			"type": "array",
+			"properties": {
+				"bedroom": {
+					"required": true
+				},
+				"kitchen": {
+					"required": false
+				}
+			}
+		},
+		"tree": {
+			"required": false,
+			"type": "object",
+			"properties": {
+				"branch": {
+					"required": true
+				}
+			}
+		},
+		"drink": {
+			"required": false,
+			"type": "array",
+			"properties": {
+				"water": {
+					"required": true
+				},
+				"beer": {
+					"required": true
+				}
+			}
+		}
+	}
+}

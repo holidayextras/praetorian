@@ -1,0 +1,85 @@
+{
+	"json": { 
+		"model": "Ford",
+		"car": [
+			{
+				"colour": "red",
+				"seats": {
+					"remove": true,
+					"front": 2
+				},
+				"removeArray": [
+				],
+				"removeObject": {
+				}
+			}
+		],
+		"removeArray": [
+		],
+		"removeObject": {
+		},
+		"trailer": {
+			"size": 3,
+			"remove": 7,
+			"removeArray": [
+			],
+			"removeObject": {             
+			}
+		}
+	},
+	"schema": {
+		"model": {
+			"required": true,
+			"description": "Car model",
+			"type": "string"
+		},
+		"car": {
+			"required": true,
+			"type": "array",
+			"properties": {
+				"colour": {
+					"required": true,
+					"description": "A colour",
+					"type": "string"
+				},
+				"seats": {
+					"required": true,
+					"type": "object",
+					"description": "Breakdown of seats",
+					"properties": {
+						"front": {
+							"required": true,
+							"description": "Number of seats in the fron",
+							"type": "integer"
+						}
+					}
+				}
+			}
+		},
+		"trailer": {
+			"required": true,
+			"type": "object",
+			"properties": {
+				"size": {
+					"required": true,
+					"type": "integer",
+					"description": "Length of trailer"
+				}
+			}
+		}
+	},
+	"expected": { 
+		"model": "Ford",
+		"car": [
+			{
+				"colour": "red",
+				"seats": {
+					"front": 2
+				}
+			}
+		],
+		"trailer": {
+			"size": 3
+		}
+	}
+}
