@@ -1,13 +1,15 @@
+// TODO
+// configuration, where does the js go for this? should everyone write their own?
+// praetorian, add "in" and "boolean" types
+
 // get praetorian (so we can test it)
 var Praetorian = require( '../index' );
 praetorian = new Praetorian( { debug: true } ); // 
 
 // and some testing stuff...
 var vows = require( 'vows' ),
-		assert = require( 'assert' );
-
-
-var configuration = require( '../lib/configuration' );
+		assert = require( 'assert' ),
+		configuration = require( '../lib/configuration' );
 
 // Data sanitising: this should strip out all invalid properties
 var quintus = require( './json/quintus' );
@@ -19,18 +21,7 @@ var gracchus = require( './json/gracchus' );
 // this will throw exactly 7 errors
 var gaius = require( './json/gaius' );
 // Data validation
-var falco = {
-	"json": {
-		"weapon": "sword"
-	},
-	"schema": {
-		"weapon": {
-			"validation": configuration.integer
-		}
-	},
-	"expected": {
-	}
-}
+var falco = require( './json/falco' )( configuration );
 
 vows.describe( 'praetorian' ).addBatch( {
 
@@ -104,7 +95,11 @@ vows.describe( 'praetorian' ).addBatch( {
 				console.log( 'falco result', result );
 				console.log( 'falco err', err );
 
-				
+				// no json will be returned as the json passed in breaks the schema
+				assert.isUndefined( result );
+
+				// should be exactly X errors
+				assert.equal( err.length, 7 );
 
 			}
 		}
