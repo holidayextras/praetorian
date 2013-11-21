@@ -1,6 +1,8 @@
 // TODO
 // configuration, where does the js go for this? should everyone write their own?
+// can I remove primitive types?  not useful as arrays have items, objects have properties and all others have their own validation routines
 // praetorian, add "in" and "boolean" types
+// checksum type...
 
 // get praetorian (so we can test it)
 var Praetorian = require( '../index' );
