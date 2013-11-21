@@ -52,7 +52,7 @@ Example:
 }
 ```
 Notes:
-* Type only needs to be specified if it's ARRAY or OBJECT
+* By specifying "type", Praetorian will automatically cast values
 * Objects have "properties"
 * Arrays have "items"
 * Validation configuration should be used to ensure any type dependencies are met

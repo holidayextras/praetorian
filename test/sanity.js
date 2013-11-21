@@ -1,12 +1,13 @@
 // TODO
 // configuration, where does the js go for this? should everyone write their own?
-// can I remove primitive types?  not useful as arrays have items, objects have properties and all others have their own validation routines
+// # can I remove primitive types?  not useful as arrays have items, objects have properties and all others have their own validation routines
 // praetorian, add "in" and "boolean" types
+// type conversion, praetorian or somewhere else? true not "true"
 // checksum type...
 
 // get praetorian (so we can test it)
 var Praetorian = require( '../index' );
-praetorian = new Praetorian( { debug: true } ); // 
+praetorian = new Praetorian();
 
 // and some testing stuff...
 var vows = require( 'vows' ),
@@ -24,6 +25,8 @@ var gracchus = require( './json/gracchus' );
 var gaius = require( './json/gaius' );
 // Data validation
 var falco = require( './json/falco' )( configuration );
+// Type conversion
+var lucius = require( './json/lucius' );
 
 vows.describe( 'praetorian' ).addBatch( {
 
@@ -94,14 +97,33 @@ vows.describe( 'praetorian' ).addBatch( {
 			},
 			'execute falco': function( err, result ) {
 
-				console.log( 'falco result', result );
-				console.log( 'falco err', err );
-
 				// no json will be returned as the json passed in breaks the schema
 				assert.isUndefined( result );
 
 				// should be exactly X errors
 				assert.equal( err.length, 7 );
+
+			}
+		},
+		
+		'lucius': {
+			topic: function() {
+				// fire the call
+				praetorian.validate( lucius.json, lucius.schema, this.callback );
+			},
+			'execute lucius': function( err, result ) {
+
+				// errors thrown by praetorian will be handled and return an err, to pass the value should be null
+				assert.isNull( err );
+
+				// check the response isn't null either
+				assert.isNotNull( result );
+
+				// must be an object too
+				assert.isObject( result );
+				
+				// now check that the result json (cleaned data) is EXACTLY what we expect it to be
+				assert.deepEqual( result, lucius.expected );
 
 			}
 		}

@@ -1,0 +1,28 @@
+{
+	"json": {
+		"colour": "red",
+		"boolean": "true",
+		"integer": "1",
+		"decimal": "1.99"
+	},
+	"schema": {
+		"colour": {
+			"type": "string"
+		},
+		"boolean": {
+			"type": "boolean"
+		},
+		"integer": {
+			"type": "integer"
+		},
+		"decimal": {
+			"type": "decimal"
+		}
+	},
+	"expected": {
+		"colour": "red",
+		"boolean": true,
+		"integer": 1,
+		"decimal": 1.99
+	}
+}
