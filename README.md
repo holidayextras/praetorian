@@ -37,6 +37,17 @@ Example:
                 "required": true
             }
         }
+    },
+    "helmet": {
+        "type": "object",
+        "properties": {
+            "noseGuard": {
+                "required": true
+            },
+            "chinStrap": {
+
+            }
+        }
     }
 }
 ```
