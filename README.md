@@ -6,7 +6,7 @@ Praetorian is a structured JSON validator.  It take both a JSON data set and a s
 Version
 --
 
-0.0.2 (in development)
+0.0.3 (in development)
 
 Installation
 --
