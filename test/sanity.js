@@ -7,7 +7,11 @@
 
 // get praetorian (so we can test it)
 var Praetorian = require( '../index' );
-praetorian = new Praetorian();
+praetorian = new Praetorian(
+	{
+		automaticTypeConversion: true
+	}
+);
 
 // and some testing stuff...
 var vows = require( 'vows' ),

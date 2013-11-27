@@ -1,26 +1,26 @@
 {
-	"name": "praetorian",
-	"version": "0.0.2",
-	"description": "A structured JSON parser and validator",
-	"main": "index.js",
-	"license": "MIT",
-	"directories": {
-		"test": "./test",
-		"lib": "./lib"
-	},
-	"dependencies": {
-		"underscore": "1.5.x",
-		"moment": "2.0.0"
-	},
-	"devDependencies": {
-		"vows": "0.7.0"
-	},
-	"author": {
-		"name": "Kevin Hodges",
-		"email": "kevin.hodges@holidayextras.com"
-	},
-	"repository" : {
-		"type" : "git",
-		"url" : "http://github.com/kevinhodges/praetorian.git"
+  "name": "praetorian",
+  "version": "0.0.3",
+  "description": "A structured JSON parser and validator",
+  "main": "index.js",
+  "license": "MIT",
+  "directories": {
+    "test": "./test",
+    "lib": "./lib"
+  },
+  "dependencies": {
+    "moment": "2.0.0",
+    "lodash": "~2.3.0"
+  },
+  "devDependencies": {
+    "vows": "0.7.0"
+  },
+  "author": {
+    "name": "Kevin Hodges",
+    "email": "kevin.hodges@holidayextras.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kevinhodges/praetorian.git"
   }
 }
