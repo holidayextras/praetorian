@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "moment": "2.0.0",
-    "lodash": "2.3.0"
+    "lodash": "2.4.0"
   },
   "devDependencies": {
     "vows": "0.7.0"
