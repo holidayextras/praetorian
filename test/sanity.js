@@ -28,9 +28,11 @@ var gracchus = require( './json/gracchus' );
 // this will throw exactly 7 errors
 var gaius = require( './json/gaius' );
 // Data validation
-var falco = require( './json/falco' )( configuration );
-// Type conversion
+// var falco = require( './json/falco' )( configuration );
+// passing type conversion
 var lucius = require( './json/lucius' );
+// failing type conversion
+var tiberius = require( './json/tiberius' );
 // requirements checker
 var tarquinius = require( './json/tarquinius' );
 
@@ -96,21 +98,21 @@ vows.describe( 'praetorian' ).addBatch( {
 			}
 		},
 
-		'falco': {
-			topic: function() {
-				// fire the call
-				praetorian.validate( falco.json, falco.schema, this.callback );
-			},
-			'execute falco': function( err, result ) {
+		// 'falco': {
+		// 	topic: function() {
+		// 		// fire the call
+		// 		praetorian.validate( falco.json, falco.schema, this.callback );
+		// 	},
+		// 	'execute falco': function( err, result ) {
 
-				// no json will be returned as the json passed in breaks the schema
-				assert.isUndefined( result );
+		// 		// no json will be returned as the json passed in breaks the schema
+		// 		assert.isUndefined( result );
 
-				// should be exactly X errors
-				assert.equal( err.length, 7 );
+		// 		// should be exactly X errors
+		// 		assert.equal( err.length, 7 );
 
-			}
-		},
+		// 	}
+		// },
 		
 		'lucius': {
 			topic: function() {
@@ -130,6 +132,22 @@ vows.describe( 'praetorian' ).addBatch( {
 				
 				// now check that the result json (cleaned data) is EXACTLY what we expect it to be
 				assert.deepEqual( result, lucius.expected );
+
+			}
+		},
+
+		'tiberius': {
+			topic: function() {
+				// fire the call
+				praetorian.validate( tiberius.json, tiberius.schema, this.callback );
+			},
+			'execute tiberius': function( err, result ) {
+
+				// no json is passed in, result will be undefined
+				assert.isUndefined( result );
+
+				// should be exactly 3 errors, one for each of the failing boolean conversions
+				assert.equal( err.length, 3 );
 
 			}
 		},

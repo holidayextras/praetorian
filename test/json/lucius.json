@@ -3,12 +3,9 @@
 		"colour": "red",
 		"boolean": "true",
 		"actualBoolean": true,
-		"notBoolean": "hey",
 		"integer": "1",
-		"notInteger": "hey",
 		"decimalInteger": "1.99",
 		"decimal": "1.99",
-		"notDecimal": "hey",
 		"integerDecimal": "1"
 	},
 	"schema": {
@@ -21,22 +18,13 @@
 		"boolean": {
 			"type": "boolean"
 		},
-		"notBoolean": {
-			"type": "boolean"
-		},
 		"integer": {
-			"type": "integer"
-		},
-		"notInteger": {
 			"type": "integer"
 		},
 		"decimalInteger": {
 			"type": "integer"
 		},
 		"decimal": {
-			"type": "decimal"
-		},
-		"notDecimal": {
 			"type": "decimal"
 		},
 		"integerDecimal": {
@@ -47,12 +35,9 @@
 		"colour": "red",
 		"boolean": true,
 		"actualBoolean": true,
-		"notBoolean": "hey",
 		"integer": 1,
-		"notInteger": "hey",
 		"decimalInteger": 1,
 		"decimal": 1.99,
-		"notDecimal": "hey",
 		"integerDecimal": 1
 	}
 }
