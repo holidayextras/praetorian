@@ -69,24 +69,37 @@ var schema = {
 	}
 }
 
+var schema2 = {
+	"transactionReference": {
+		"type": "string",
+		"required": true,
+		"description": "A reference of sorts"
+	},
+	"booking": {
+		"type": "object",
+		"description": "A freaking booking",
+		"required": true
+	}
+}
+
 // check shit
-praetorian.validate( json, schema, function( err, data ) {
+// praetorian.validate( json, schema, function( err, data ) {
 
-		if( err ) {
+// 		if( err ) {
 			
-			console.log( 'check err', err );
+// 			console.log( 'check err', err );
 
-			praetorian.requirements( schema, function( err, data ) {
+// 			praetorian.requirements( schema, function( err, data ) {
 
-				if( err ) {
-					console.log( 'requirements err', err );
-				} else {
-					console.log( 'requirements success', data );		
-				}
+// 				if( err ) {
+// 					console.log( 'requirements err', err );
+// 				} else {
+// 					console.log( 'requirements success', data );		
+// 				}
 
-			} );
-		} else {
-			// console.log( 'check success', data );
-			console.log( 'data', data.booking.elements );
-		}
-} );
+// 			} );
+// 		} else {
+// 			// console.log( 'check success', data );
+// 			console.log( 'data', data.booking.elements );
+// 		}
+// } );

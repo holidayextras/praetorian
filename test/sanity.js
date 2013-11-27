@@ -31,6 +31,8 @@ var gaius = require( './json/gaius' );
 var falco = require( './json/falco' )( configuration );
 // Type conversion
 var lucius = require( './json/lucius' );
+// requirements checker
+var tarquinius = require( './json/tarquinius' );
 
 vows.describe( 'praetorian' ).addBatch( {
 
@@ -128,6 +130,28 @@ vows.describe( 'praetorian' ).addBatch( {
 				
 				// now check that the result json (cleaned data) is EXACTLY what we expect it to be
 				assert.deepEqual( result, lucius.expected );
+
+			}
+		},
+		
+		'tarquinius': {
+			topic: function() {
+				// fire the call
+				praetorian.requirements( tarquinius.schema, this.callback );
+			},
+			'execute tarquinius': function( err, result ) {
+
+				// errors thrown by praetorian will be handled and return an err, to pass the value should be null
+				assert.isNull( err );
+
+				// check the response isn't null either
+				assert.isNotNull( result );
+
+				// must be an object too
+				assert.isObject( result );
+				
+				// now check that the result json (cleaned data) is EXACTLY what we expect it to be
+				assert.deepEqual( result, tarquinius.expected );
 
 			}
 		}
