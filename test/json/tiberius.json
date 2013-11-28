@@ -1,0 +1,18 @@
+{
+	"json": {
+		"notBoolean": "hey",
+		"notInteger": "hey",
+		"notDecimal": "hey"
+	},
+	"schema": {
+		"notBoolean": {
+			"type": "boolean"
+		},
+		"notInteger": {
+			"type": "integer"
+		},
+		"notDecimal": {
+			"type": "decimal"
+		}
+	}
+}

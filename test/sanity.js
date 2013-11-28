@@ -15,8 +15,7 @@ praetorian = new Praetorian(
 
 // and some testing stuff...
 var vows = require( 'vows' ),
-		assert = require( 'assert' ),
-		configuration = require( '../lib/configuration' );
+		assert = require( 'assert' );
 
 // Data sanitising: this should strip out all invalid properties
 var quintus = require( './json/quintus' );

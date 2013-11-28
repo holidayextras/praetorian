@@ -1,0 +1,86 @@
+{
+	"schema": {
+		"model": {
+			"required": true,
+			"description": "Car model",
+			"type": "string"
+		},
+		"car": {
+			"required": false,
+			"type": "array",
+			"items": {
+				"colour": {
+					"required": true,
+					"description": "A colour",
+					"type": "string"
+				},
+				"seats": {
+					"required": false,
+					"type": "object",
+					"description": "Breakdown of seats",
+					"properties": {
+						"front": {
+							"required": true,
+							"description": "Number of seats in the front",
+							"type": "integer"
+						}
+					}
+				}
+			}
+		},
+		"trailer": {
+			"required": true,
+			"type": "object",
+			"properties": {
+				"size": {
+					"required": false,
+					"type": "integer",
+					"description": "Length of trailer"
+				}
+			}
+		}
+	},
+	"expected": { 
+		"model": {
+			"description": "Car model",
+			"example": "Must be an string e.g. \"Hello world\"",
+			"required": true
+		},
+		"car": {
+			"description": "",
+			"example": "No example given",
+			"required": false,
+			"items": {
+				"colour": {
+					"required": true,
+					"description": "A colour",
+					"example": "Must be an string e.g. \"Hello world\""
+				},
+				"seats": {
+					"required": false,
+					"example": "No example given",
+					"description": "Breakdown of seats",
+					"properties": {
+						"front": {
+							"required": true,
+							"example": "Must be an integer e.g. 1",
+							"description": "Number of seats in the front"
+						}
+					}
+				}
+			}
+		},
+		"trailer": {
+			"example": "No example given",
+			"required": true,
+			"description": "",
+			"properties": {
+				"size": {
+					"required": false,
+					"example": "Must be an integer e.g. 1",
+					"description": "Length of trailer"
+				}
+			}
+		}
+	}
+}

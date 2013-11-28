@@ -1,0 +1,23 @@
+{
+	"VALUE_TYPE_MUST_BE_ARRAY": "Invalid type, expected Array",
+	"VALUE_TYPE_MUST_BE_OBJECT": "Invalid type, expected OBJECT",
+	"VALUE_NOT_A_BOOLEAN": "Not a boolean",
+	"VALUE_NOT_A_DECIMAL": "Not a decimal",
+	"VALUE_NOT_A_INTEGER": "Not an integer",
+	"VALUE_NOT_A_STRING": "Not a string",
+	"VALUE_FOR_MONTH_HAS_TOO_MANY_DAYS": "Too many days for month",
+	"VALUE_FOR_MONTH_HAS_TOO_FEW_DAYS": "Too few days for month",
+	"VALUE_FOR_MONTH_TOO_HIGH": "Month value too high",
+	"VALUE_FOR_MONTH_TOO_LOW": "Month value too low",
+	"VALUE_FOR_MONTH_INVALID_FORMAT": "Invalid date format",
+	"FIELD_REQUIRED_BUT_NOT_FOUND": "Required but not found",
+	"PARAMETER_JSON_NOT_OBJECT": "parameter \"json\" is not [object]",
+	"PARAMETER_SCHEMA_NOT_OBJECT": "parameter \"schema\" is not [object]",
+	"PARAMETER_CALLBACK_NOT_FUNCTION": "parameter \"callback\" is not [function]",
+	"NO_EXAMPLE_GIVEN": "No example given",
+	"EXAMPLE_MUST_BE_BOOLEAN": "Must be an boolean e.g. true",
+	"EXAMPLE_MUST_BE_DATE": "Must be a date e.g. 2019-05-30",
+	"EXAMPLE_MUST_BE_DECIMAL": "Must be an decimal e.g. 0.99",
+	"EXAMPLE_MUST_BE_INTEGER": "Must be an integer e.g. 1",
+	"EXAMPLE_MUST_BE_STRING": "Must be an string e.g. \"Hello world\""	
+}

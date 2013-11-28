@@ -1,7 +1,11 @@
 // using this to build praetorian...
 // fire up Praetorian
 var Praetorian = require( '../index' );
-praetorian = new Praetorian();
+praetorian = new Praetorian(
+	{
+		"language": "es"
+	}
+);
 
 var json = {
 	"booking": {
@@ -55,7 +59,8 @@ var schema = {
 								"type": "boolean"
 							},
 							"age2": {
-								"type": "boolean"
+								"type": "boolean",
+								"description": "Second age"
 							},
 							"age3": {
 								"type": "boolean"
@@ -112,7 +117,7 @@ praetorian.validate( json, schema, function( err, data ) {
 				if( err ) {
 					console.log( 'requirements err', err );
 				} else {
-					console.log( 'requirements success', data );		
+					console.log( 'requirements success', data.booking.properties.elements.properties.hotels );		
 				}
 
 			} );
