@@ -25,7 +25,7 @@ $ npm install praetorian
 
 ### Basic Types
 
-Praetorian supports the following data types "out of the box", `boolean`, `date`, `decimal`, `integer`, `string`.  By defining these in your schema against a JSON key, Praetorian will ensure the value passed in the JSON is of that type.
+Praetorian supports the following data types "out of the box", `boolean`, `date`, `decimal`, `integer`, `string`.  By defining these in your schema against a JSON key, Praetorian will ensure the value passed in the JSON data is of that type.
 
 ```sh
 {
@@ -37,11 +37,11 @@ Praetorian supports the following data types "out of the box", `boolean`, `date`
 
 ### Complex Types
 
-Praetorian supports both complex data types `array` and `object`.  Both can be used in a schema recursively;
+Praetorian supports both complex data types `array` and `object`.  Both can be used in a schema recursively.
 
 #### Array
 
-Type `array` needs a JSON key of "items".  Inside an `array` you can pass more basic or complex types as required.  As with basic types, `array` can have a "required" JSON key.  
+Type `array` needs a JSON key of `items`.  Inside an `array` you can pass more basic or complex types as required.  As with basic types, `array` can have a "required" JSON key.  
 
 _Note: when passing JSON data as an `array` type, the "items" structure can be repeated as many times as you need._
 
@@ -64,9 +64,9 @@ _Note: when passing JSON data as an `array` type, the "items" structure can be r
 
 #### Object
 
-Type `object` needs a JSON key of "properties".  Inside an `object` you can pass more basic or complex types as required.  As with basic types, `object` can have a "required" JSON key.  
+Type `object` needs a JSON key of `properties`.  Inside an `object` you can pass more basic or complex types as required.  As with basic types, `object` can have a `required` JSON key.  
 
-_Note: unlike with `array`, when passing JSON data as an `object` type, the "properties" structure can only be included once._
+_Note: unlike with `array`, when passing JSON data as type `object`, the `properties` structure can only be included once._
 
 ```sh
 {
@@ -96,7 +96,7 @@ To mark a JSON key as a required field simply do the following:
   }
 }
 ```
-When Praetorian validates, this will ensure when Pr
+To pass validation of a schema with a `required` property, the supplied JSON data must have this field present and correct
 _Note: if the field is not required, you can set `"required": false` or simply remove the property entirely._
 
 ### Data "cleaning"
@@ -105,9 +105,9 @@ During the `praetorian.validate()` call, any data that is not recognised by the 
 
 ## Example 1
 
-Using an `array` type.  With the following example notice in the result, the key "location" on the second object in the "senators" array has been stripped out of the "result".  As it doesn't form part of the schema, Praetorian removes this property.
+Using an `array` type.  With the following example notice in the result, the key `location` on the second object in the `senators` array has been stripped out of the "result".  As it doesn't form part of the schema, Praetorian removes this property.
 
-### Schema
+_Schema_
 ```sh
 {
   "senators": {
@@ -124,7 +124,7 @@ Using an `array` type.  With the following example notice in the result, the key
 }
 ```
 
-### JSON
+_JSON_
 ```sh
 {
   "senators": [
@@ -141,7 +141,7 @@ Using an `array` type.  With the following example notice in the result, the key
 }
 ```
 
-### Result
+_Result_
 ```sh
 {
   "senators": [
@@ -158,6 +158,8 @@ Using an `array` type.  With the following example notice in the result, the key
 ```
 
 ## Usage
+
+To include Praetorian in your project and get underway, use the following snippet.
 
 ```sh
 var Praetorian = require( 'praetorian' );
@@ -183,17 +185,28 @@ praetorian.validate( json, schema, function( err, result ) {
 
 ## Options
 
-Options can be passed into the Praetorian constructor to modify the default behaviour.  
+Options can be passed into the Praetorian constructor to modify the default behaviour like this:
 
-### Automatic type conversion
+```sh
+var Praetorian = require( 'praetorian' );
+praetorian = new Praetorian(
+  {
+    automaticTypeConversion: false,
+    language: "es"
+  }
+);
+```
 
+### - Automatic type conversion
+
+By default `automaticTypeConversion` is set to `true`.  When `praetorian.validate()` is called, where "types" are specified in your schema, Praetorian will attempt to convert an obvious types to their native.  To turn this off, set it to `false`.
+
+__How?__
 ```sh
 {
   automaticTypeConversion: false 
 }
 ```
-
-By default `automaticTypeConversion` is set to `true`.  When `praetorian.validate()` is called, where "types" are specified in your schema, Praetorian will attempt to convert an obvious types to their native.  To turn this off, set it to `false`.
 
 __Schema__
 ```sh
@@ -218,17 +231,18 @@ __Result__
 }
 ```
 
-### Language
+### - Language
 
+By default `language` is set to `en` (English).  When `.validate()` or `.requirements()` is called, any messages returned will be in the requested language.  Supported languages can be found in the `lib/internationalisation` folder.
+
+_Note: `description` keys will be returned from the schema as they are passed in._
+
+__How?__
 ```sh
 {
   language: "es"
 }
 ```
-
-By default `language` is set to `en` (English).  When `.validate()` or `.requirements()` is called, any messages returned will be in the requested language.  Supported languages can be found in the `lib/internationalisation` folder.
-
-_Note: `description` keys will be returned from the schema as they are passed in._
 
 __Schema__
 ```sh
