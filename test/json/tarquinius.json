@@ -48,7 +48,7 @@
 		},
 		"car": {
 			"description": "",
-			"example": "No example given",
+			"example": "Example not given",
 			"required": false,
 			"items": {
 				"colour": {
@@ -58,7 +58,7 @@
 				},
 				"seats": {
 					"required": false,
-					"example": "No example given",
+					"example": "Example not given",
 					"description": "Breakdown of seats",
 					"properties": {
 						"front": {
@@ -71,7 +71,7 @@
 			}
 		},
 		"trailer": {
-			"example": "No example given",
+			"example": "Example not given",
 			"required": true,
 			"description": "",
 			"properties": {
