@@ -27,11 +27,43 @@ $ npm install praetorian
 
 Praetorian supports the following data types "out of the box", `boolean`, `date`, `decimal`, `integer`, `string`.  By defining these in your schema against a JSON key, Praetorian will ensure the value passed in the JSON data is of that type.
 
+#### Boolean
+
 ```sh
 {
-  "shield": {
-    "type": "string"
-  }
+  "shield": true
+}
+```
+
+#### Date
+
+```sh
+{
+  "shield": "2016-06-30"
+}
+```
+
+#### Decimal
+
+```sh
+{
+  "shield": 1.07
+}
+```
+
+#### Integer
+
+```sh
+{
+  "shield": 14
+}
+```
+
+#### String
+
+```sh
+{
+  "shield": "wooden"
 }
 ```
 
