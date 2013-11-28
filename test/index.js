@@ -36,6 +36,7 @@ var json = {
 	}
 }
 
+
 var schema = {
 	"booking": {
 		"type": "object",
@@ -105,24 +106,34 @@ var schema = {
 	}
 }
 
+var json3 = {
+  "hasHorse": "notABlloean"
+}
+
+var schema3 = {
+  "hasHorse": {
+    "type": "boolean"
+  }
+}
+
 // check shit
-praetorian.validate( json, schema, function( err, data ) {
+praetorian.validate( json3, schema3, function( err, data ) {
 
 		if( err ) {
 			
 			console.log( 'check err', err );
 
-			praetorian.requirements( schema, function( err, data ) {
+			praetorian.requirements( schema3, function( err, data ) {
 
 				if( err ) {
 					console.log( 'requirements err', err );
 				} else {
-					console.log( 'requirements success', data.booking.properties.elements.properties.hotels );		
+					console.log( 'requirements success', data );		
 				}
 
 			} );
 		} else {
 			// console.log( 'check success', data );
-			console.log( 'data', data.booking.elements );
+			console.log( 'data', data );
 		}
 } );
