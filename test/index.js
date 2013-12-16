@@ -1,129 +1,67 @@
 // using this to build praetorian...
 // fire up Praetorian
 var Praetorian = require( '../index' );
+// as second parameter, pass in custom rules
+// I can only use the built in "rules" so we would need to write those ourselves and accept pull requests to the core
+// would be nice to be able to add custom rules so its fully customisable...
 praetorian = new Praetorian(
 	{
-		"language": "fr"
+		"language": "en"
+	},
+	{
+		"myCompoundValidator": {
+			"rules": {
+				"minLength": 3,
+				"maxLength": 6
+			},
+			"example": "Must between 3 and 6 characters e.g. ABCD"	
+		}	
 	}
 );
 
 var json = {
-	"booking": {
-		"elements": {
-			"hotels": [
-				{
-					"arrivalDate": "2014-30-07",
-					"location": "ABC",
-					"age1": "gray",
-					"age2": 1,
-					"age3": "1",
-					"age4": "true",
-					"age5": true,
-					"height": "gray",
-					"width": "0.01",
-					"shape": 0.01
-				}
-			],
-			"tickets": [
-				{
-					"arrivalDate": "2014-09-09",
-					"code1": "23456",
-					"code2": 23456,
-					"code3": "test"
-				}
-			]
-		}
-	}
+	"foo": "ABCDEFG",
+	"bar": "AB",
+	"baz": "ABCD"
 }
-
 
 var schema = {
-	"booking": {
-		"type": "object",
-		"description": "A freaking booking",
-		"required": true,
-		"properties": {
-			"elements": {
-				"type": "object",
-				"properties": {
-					"hotels": {
-						"type": "array",
-						"items": {
-							"arrivalDate": {
-								"type": "date"
-							},
-							"location": {
-								"type": "string",
-								"required": true
-							},
-							"age1": {
-								"type": "boolean"
-							},
-							"age2": {
-								"type": "boolean",
-								"description": "Second age"
-							},
-							"age3": {
-								"type": "boolean"
-							},
-							"age4": {
-								"type": "boolean"
-							},
-							"age5": {
-								"type": "boolean"
-							},
-							"height": {
-								"type": "decimal"
-							},
-							"width": {
-								"type": "decimal"
-							},
-							"shape": {
-								"type": "decimal"
-							}
-						}
-					},
-					"tickets": {
-						"type": "array",
-						"items": {
-							"code1": {
-								"type": "integer"
-							},
-							"code2": {
-								"type": "integer"
-							},
-							"code3": {
-								"type": "integer"
-							},
-							"arrivalDate": {
-								"type": "date"
-							}
-						}
-					}
-				}
-			}
-		}
+	"foo": {
+		"type": "string",
+		"validation": "myCompoundValidator",
+		"required": true
+	},
+	"bar": {
+		"type": "string",
+		"validation": "myCompoundValidator"
+	},
+	"baz": {
+		"type": "string",
+		"validation": "myCompoundValidator"
+	},
+	"jon": {
+		"type": "string"
 	}
 }
 
-var json3 = {
-  "hasHorse": "notABlloean"
-}
+// var json = {
+// 	"hey": "2014-07-22"
+// }
 
-var schema3 = {
-  "hasHorse": {
-    "type": "boolean"
-  }
-}
+// var schema = {
+// 	"hey": {
+// 		"type": "date"
+// 	}
+// }
 
 // check shit
-praetorian.validate( json3, schema3, function( err, data ) {
+praetorian.validate( json, schema, function( err, data ) {
 
 		if( err ) {
 			
 			console.log( 'check err', err );
 
-			praetorian.requirements( schema3, function( err, data ) {
+			praetorian.requirements( schema, function( err, data ) {
 
 				if( err ) {
 					console.log( 'requirements err', err );
