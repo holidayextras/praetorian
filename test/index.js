@@ -15,14 +15,25 @@ praetorian = new Praetorian(
 				"maxLength": 6
 			},
 			"example": "Must between 3 and 6 characters e.g. ABCD"	
-		}	
+		},
+		"myInValidator": {
+			"rules": {
+				"in": [
+					"Y", "N", "T", "A"
+				]
+			},
+			"example": "Must be one of \"Y\", \"N\", \"T\" or \"A\""
+		}
 	}
 );
 
 var json = {
 	"foo": "ABCDEFG",
 	"bar": "AB",
-	"baz": "ABCD"
+	"baz": "ABCD",
+	"jon": "A",
+	"boy": "B",
+	"roy": 2
 }
 
 var schema = {
@@ -40,7 +51,16 @@ var schema = {
 		"validation": "myCompoundValidator"
 	},
 	"jon": {
-		"type": "string"
+		"type": "string",
+		"validation": "myInValidator"
+	},
+	"boy": {
+		"type": "string",
+		"validation": "myInValidator"
+	},
+	"roy": {
+		"type": "string",
+		"validation": "myInValidator"
 	}
 }
 
