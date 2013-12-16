@@ -19,5 +19,5 @@
 	"VALUE_FOR_MONTH_HAS_TOO_MANY_DAYS": "Nombre de jours trop grand pour le mois",
 	"VALUE_FOR_MONTH_HAS_TOO_FEW_DAYS": "Nombre de jours trop petit pour le mois",
 	"VALUE_TYPE_MUST_BE_ARRAY": "Type invalid, tableau attendu",
-	"VALUE_TYPE_MUST_BE_OBJECT": "Type invalid, objet attendu",
+	"VALUE_TYPE_MUST_BE_OBJECT": "Type invalid, objet attendu"
 }
