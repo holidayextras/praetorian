@@ -1,0 +1,23 @@
+{
+	"FIELD_REQUIRED_BUT_NOT_FOUND": "Requis mais non trouvé",
+	"EXAMPLE_MUST_BE_BOOLEAN": "Doit être un booléen ex.: true",
+	"EXAMPLE_MUST_BE_DATE": "Doit être une date ex.: 2019-05-30",
+	"EXAMPLE_MUST_BE_DECIMAL": "Doit être un décimal ex.: 0.99",
+	"EXAMPLE_MUST_BE_INTEGER": "Doit être un entier ex.: 1",
+	"EXAMPLE_MUST_BE_STRING": "Doit être une chaîne de caractères ex.: \"Hello world\"",
+	"EXAMPLE_NOT_GIVEN": "Example non donner",
+	"PARAMETER_CALLBACK_NOT_FUNCTION": "Paramètre \"callback\" n'est pas une [fonction]",
+	"PARAMETER_JSON_NOT_OBJECT": "Paramètre \"json\" n'est pas un [objet]",
+	"PARAMETER_SCHEMA_NOT_OBJECT": "Paramètre \"schema\" n'est pas un [objet]",
+	"VALUE_NOT_A_BOOLEAN": "N'est pas un booléen",
+	"VALUE_NOT_A_DECIMAL": "N'est pas un décimal",
+	"VALUE_NOT_A_INTEGER": "N'est pas un entier",
+	"VALUE_NOT_A_STRING": "N'est pas une chaîne de caractères",
+	"VALUE_FOR_MONTH_INVALID_FORMAT": "Format de date invalide",
+	"VALUE_FOR_MONTH_TOO_HIGH": "Valeur du mois trop grande",
+	"VALUE_FOR_MONTH_TOO_LOW": "Valeur du mois trop petite",
+	"VALUE_FOR_MONTH_HAS_TOO_MANY_DAYS": "Nombre de jours trop grand pour le mois",
+	"VALUE_FOR_MONTH_HAS_TOO_FEW_DAYS": "Nombre de jours trop petit pour le mois",
+	"VALUE_TYPE_MUST_BE_ARRAY": "Type invalid, tableau attendu",
+	"VALUE_TYPE_MUST_BE_OBJECT": "Type invalid, objet attendu"
+}

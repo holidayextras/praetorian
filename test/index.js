@@ -3,7 +3,7 @@
 var Praetorian = require( '../index' );
 praetorian = new Praetorian(
 	{
-		"language": "es"
+		"language": "fr"
 	}
 );
 
