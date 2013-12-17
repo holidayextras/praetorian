@@ -18,7 +18,7 @@ praetorian = new Praetorian(
 		},
 		"myInValidator": {
 			"rules": {
-				"in": [
+				"enum": [
 					"Y", "N", "T", "A"
 				]
 			},
