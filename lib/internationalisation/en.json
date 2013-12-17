@@ -8,7 +8,7 @@
 	"RULE_NOT_GIVEN": "Rule not given",	
 	"PARAMETER_CALLBACK_NOT_FUNCTION": "Parameter \"callback\" is not [function]",
 	"PARAMETER_JSON_NOT_OBJECT": "Parameter \"json\" is not [object]",
-	"PARAMETER_RULES_NOT_OBJECT": "Parameter \"rules\" is not [object]",
+	"PARAMETER_TASKS_NOT_OBJECT": "Parameter \"tasks\" is not [object]",
 	"PARAMETER_SCHEMA_NOT_OBJECT": "Parameter \"schema\" is not [object]",
 	"VALUE_CHARACTERS": "characters",
 	"VALUE_NOT_A_BOOLEAN": "Not a boolean",
