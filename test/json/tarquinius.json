@@ -43,27 +43,27 @@
 	"expected": { 
 		"model": {
 			"description": "Car model",
-			"example": "Must be an string e.g. \"Hello world\"",
+			"rule": "Must be an string e.g. \"Hello world\"",
 			"required": true
 		},
 		"car": {
 			"description": "",
-			"example": "Example not given",
+			"rule": "Rule not given",
 			"required": false,
 			"items": {
 				"colour": {
 					"required": true,
 					"description": "A colour",
-					"example": "Must be an string e.g. \"Hello world\""
+					"rule": "Must be an string e.g. \"Hello world\""
 				},
 				"seats": {
 					"required": false,
-					"example": "Example not given",
+					"rule": "Rule not given",
 					"description": "Breakdown of seats",
 					"properties": {
 						"front": {
 							"required": true,
-							"example": "Must be an integer e.g. 1",
+							"rule": "Must be an integer e.g. 1",
 							"description": "Number of seats in the front"
 						}
 					}
@@ -71,13 +71,13 @@
 			}
 		},
 		"trailer": {
-			"example": "Example not given",
+			"rule": "Rule not given",
 			"required": true,
 			"description": "",
 			"properties": {
 				"size": {
 					"required": false,
-					"example": "Must be an integer e.g. 1",
+					"rule": "Must be an integer e.g. 1",
 					"description": "Length of trailer"
 				}
 			}
