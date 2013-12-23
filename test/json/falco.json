@@ -1,0 +1,31 @@
+{
+	"json": {
+		"one": {},
+		"two": {
+			"hash": "A23456789123456789123456789123456789",
+			"value": ""
+		},
+		"three": {
+			"hash": "" 
+		},
+		"four": {
+			"hash": "ABC" 
+		}
+	},
+	"schema": {
+		"one": {
+			"type": "hash"
+		},
+		"two": {
+			"type": "hash"
+		},
+		"three": {
+			"type": "hash"
+		},
+		"four": {
+			"type": "hash"
+		}
+	},
+	"expected": {
+	}
+}
