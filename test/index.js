@@ -1,29 +1,5 @@
 var crypto = require( 'crypto' );
 
-var object = {
-	"foo": "bar"
-};
-
-var json = {
-	"fooBar": {
-		"value": {
-			"foo": "bar"
-		},
-		"hash": "37f7896591e89b51db852c313aefc11391fd23a7"
-	}
-};
-
-var schema = {
-	"fooBar": {
-		"type": "hash"
-	}
-};
-
-
-
-var checksum = crypto.createHmac( 'sha1', 'LOL' ).update( JSON.stringify( object )).digest( 'hex' );
-console.log( 'checksum', checksum );
-
 // using this to build praetorian...
 // fire up Praetorian
 var Praetorian = require( '../index' );
@@ -33,9 +9,42 @@ var Praetorian = require( '../index' );
 praetorian = new Praetorian(
 	{
 		'salt': 'LOL'
+	},
+	{
+		"myCompoundValidator": {
+			"rules": {
+				"minLength": 3,
+				"maxLength": 6
+			},
+			"rule": "Must between 3 and 6 characters e.g. ABCD"	
+		},
+		"myInValidator": {
+			"rules": {
+				"enum": [
+					"Y", "N", "T", "A"
+				]
+			},
+			"rule": "Must be one of \"Y\", \"N\", \"T\" or \"A\""
+		}
 	}
 );
 
+var object = {
+	"foo": "bar"
+};
+
+var json = {
+	"fooBar": {
+		"value": object,
+		"hash": praetorian.generateHash( object )
+	}
+};
+
+var schema = {
+	"fooBar": {
+		"type": "hash"
+	}
+};
 
 // check shit
 praetorian.validate( json, schema, function( err, data ) {
