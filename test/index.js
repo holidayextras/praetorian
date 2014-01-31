@@ -1,3 +1,6 @@
+// TODO: make the parameters to Praetorian constructor one object with sub properties, not multiple parameters
+
+
 var crypto = require( 'crypto' );
 
 // using this to build praetorian...
