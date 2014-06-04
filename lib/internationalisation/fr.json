@@ -25,7 +25,7 @@
 	"VALUE_FOR_MONTH_TOO_LOW": "Valeur du mois trop petite",
 	"VALUE_NOT_IN_ARRAY": "Value is not permitted",
 	"VALUE_TOO_LONG": "** Value too long, maximum length **",
-	"VALUE_TOO_SHORT": "** Value too long, minimum length **",
+	"VALUE_TOO_SHORT": "** Value too short, minimum length **",
 	"VALUE_TYPE_MUST_BE_ARRAY": "Type invalid, tableau attendu",
 	"VALUE_TYPE_MUST_BE_OBJECT": "Type invalid, objet attendu"
 }
