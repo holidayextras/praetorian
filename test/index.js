@@ -38,14 +38,14 @@ var object = {
 
 var json = {
 	"fooBar": {
-		"value": object,
-		"hash": praetorian.generateHash( object )
+		"value": "he"
 	}
 };
 
 var schema = {
 	"fooBar": {
-		"type": "hash"
+		"type": "string",
+		"validation": "myCompoundValidator"
 	}
 };
 
