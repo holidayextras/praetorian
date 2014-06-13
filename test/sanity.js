@@ -65,7 +65,7 @@ vows.describe( 'praetorian' ).addBatch( {
 				assert.isUndefined( result );
 
 				// should be exactly 7 errors, one for each of the required: true root properties
-				assert.equal( err.length, 7 );
+				assert.equal( err.length, 8 );
 
 			}
 		},
