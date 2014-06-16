@@ -25,7 +25,7 @@ $ npm install praetorian
 
 ### Basic Types
 
-Praetorian supports the following data types "out of the box", `boolean`, `date`, `decimal`, `integer`, `string`.  By defining these in your schema against a JSON key, Praetorian will ensure the value passed in the JSON data is of that type.
+Praetorian supports the following data types "out of the box", `boolean`, `date`, `decimal`, `integer`, `string`.  By defining these in your schema against a JSON key, Praetorian will ensure the value passed in the JSON data is of that type. Types are required.
 
 #### Boolean
 

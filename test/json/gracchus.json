@@ -24,20 +24,24 @@
 	},
 	"schema": {
 		"cars": {
-			"required": false
+			"required": false,
+			"type" : "boolean"
 		},
 		"sword": {
-			"required": true
+			"required": true,
+			"type" : "boolean"
 		},
 		"animals": {
 			"required": true,
 			"type": "object",
 			"properties": {
 				"cow": {
-					"required": true
+					"required": true,
+					"type" : "boolean"
 				},
 				"sheep": {
-					"required": false
+					"required": false,
+					"type" : "boolean"
 				}
 
 			}
@@ -47,10 +51,12 @@
 			"type": "object",
 			"properties": {
 				"red": {
-					"required": true
+					"required": true,
+					"type" : "boolean"
 				},
 				"blue": {
-					"required": false
+					"required": false,
+					"type" : "boolean"
 				}
 			}
 		},
@@ -59,10 +65,12 @@
 			"type": "array",
 			"items": {
 				"circle": {
-					"required": true
+					"required": true,
+					"type" : "boolean"
 				},
 				"square": {
-					"required": false
+					"required": false,
+					"type" : "boolean"
 				}
 			}
 		},
@@ -71,10 +79,12 @@
 			"type": "array",
 			"items": {
 				"woof": {
-					"required": true
+					"required": true,
+					"type" : "boolean"
 				},
 				"meow": {
-					"required": false
+					"required": false,
+					"type" : "boolean"
 				}
 			}
 		}

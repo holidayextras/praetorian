@@ -1,5 +1,6 @@
 {
-	"FIELD_REQUIRED_BUT_NOT_FOUND": "Required but not found",
+	"TYPE_REQUIRED_BUT_NOT_FOUND" : "Type required but not found",
+	"FIELD_REQUIRED_BUT_NOT_FOUND": "Field required but not found",
 	"HASH_INVALID": "Hash not present or invalid",
 	"HASH_VALUE_NOT_A_OBJECT": "Hash value not an object",
 	"PARAMETER_CALLBACK_NOT_FUNCTION": "Parameter \"callback\" is not [function]",

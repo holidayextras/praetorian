@@ -19,7 +19,7 @@ var falco = require( './json/falco' );
 // do note though, this test should pass with all "requirements" met
 var gracchus = require( './json/gracchus' );
 // data verification: check that required fields that arent passed in json add an error
-// this will throw exactly 7 errors
+// this will throw exactly 8 errors
 var gaius = require( './json/gaius' );
 // passing type conversion
 var lucius = require( './json/lucius' );
@@ -64,8 +64,8 @@ vows.describe( 'praetorian' ).addBatch( {
 				// no json is passed in, result will be undefined
 				assert.isUndefined( result );
 
-				// should be exactly 7 errors, one for each of the required: true root properties
-				assert.equal( err.length, 7 );
+				// should be exactly 8 errors, one for each of the required: true root properties
+				assert.equal( err.length, 8 );
 
 			}
 		},
