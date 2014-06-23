@@ -1,6 +1,6 @@
 {
   "name": "praetorian",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A structured JSON parser and validator",
   "main": "index.js",
   "license": "MIT",
