@@ -1,6 +1,6 @@
 {
   "name": "praetorian",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A structured JSON parser and validator",
   "main": "index.js",
   "license": "MIT",
@@ -15,11 +15,11 @@
     "vows": "0.7.0"
   },
   "author": {
-    "name": "Kevin Hodges",
-    "email": "kevin.hodges@holidayextras.com"
-  },
+    "name": "Shortbreaks",
+    "email": "shortbreaksdev@holidayextras.com"
+  },
   "repository": {
     "type": "git",
-    "url": "http://github.com/kevinhodges/praetorian.git"
+    "url": "http://github.com/shortbreaks/praetorian.git"
   }
 }
