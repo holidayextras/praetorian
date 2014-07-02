@@ -15,9 +15,9 @@
     "vows": "0.7.0"
   },
   "author": {
-    "name": "Shortbreaks",
-    "email": "shortbreaksdev@holidayextras.com"
-  },
+    "name": "Shortbreaks",
+    "email": "shortbreaksdev@holidayextras.com"
+  },
   "repository": {
     "type": "git",
     "url": "http://github.com/shortbreaks/praetorian.git"
