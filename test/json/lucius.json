@@ -1,8 +1,10 @@
 {
 	"json": {
 		"colour": "red",
-		"boolean": "true",
-		"actualBoolean": true,
+		"trueBoolean": "true",
+		"falseBoolean": "false",
+		"actualTrueBoolean": true,
+		"actualFalseBoolean": false,
 		"integer": "1",
 		"decimalInteger": "1.99",
 		"decimal": "1.99",
@@ -12,10 +14,16 @@
 		"colour": {
 			"type": "string"
 		},
-		"actualBoolean": {
+		"trueBoolean": {
 			"type": "boolean"
 		},
-		"boolean": {
+		"falseBoolean": {
+			"type": "boolean"
+		},
+		"actualTrueBoolean": {
+			"type": "boolean"
+		},
+		"actualFalseBoolean": {
 			"type": "boolean"
 		},
 		"integer": {
@@ -33,8 +41,10 @@
 	},
 	"expected": {
 		"colour": "red",
-		"boolean": true,
-		"actualBoolean": true,
+		"trueBoolean": true,
+		"falseBoolean": false,
+		"actualTrueBoolean": true,
+		"actualFalseBoolean": false,
 		"integer": 1,
 		"decimalInteger": 1,
 		"decimal": 1.99,
