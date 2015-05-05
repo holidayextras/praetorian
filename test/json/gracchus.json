@@ -19,8 +19,8 @@
 				"circle": true,
 				"square": true
 			}
-		]
-			
+		],
+		"city": [ 0 ]			
 	},
 	"schema": {
 		"cars": {
@@ -87,6 +87,10 @@
 					"type" : "boolean"
 				}
 			}
+		},
+		"city": {
+			"required": false,
+			"type" : "array"
 		}
 	},
 	"expected": {
@@ -109,6 +113,7 @@
 				"circle": true,
 				"square": true
 			}
-		]
+		],
+		"city": [ 0 ]
 	}
 }
