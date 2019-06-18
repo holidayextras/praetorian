@@ -1,6 +1,6 @@
 {
   "name": "praetorian",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A structured JSON parser and validator",
   "main": "index.js",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "lodash": "4.13.1"
+    "lodash": "4.17.11"
   },
   "devDependencies": {
     "vows": "0.7.0"

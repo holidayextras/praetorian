@@ -1,6 +1,6 @@
 # Praetorian
 
-Praetorian is a structured JSON validator.  Taking JSON data payload and a JSON schema, it's primary usage is to ensure the data meets the required specification of said schema.
+Praetorian is a structured JSON validator.  Taking JSON data payload and a JSON schema, its primary usage is to ensure the data meets the required specification of said schema.
 
 ## Features
 
@@ -13,7 +13,7 @@ Praetorian is a structured JSON validator.  Taking JSON data payload and a JSON 
 
 ## Philosophy
 
-While there are other JSON schema validators in the wild, often they are complex, un-weildy or require a lot of knowledge upfront.  Praetorian has been designed to be simple to deploy, fast to execute and flexible to support common use cases.
+While there are other JSON schema validators in the wild, often they are complex, unwieldy or require a lot of knowledge upfront.  Praetorian has been designed to be simple to deploy, fast to execute and flexible to support common use cases.
 
 ## Installation
 
@@ -73,7 +73,7 @@ Praetorian supports both complex data types `array` and `object`.  Both can be u
 
 #### Array
 
-Type `array` needs a JSON key of `items`.  Inside an `array` you can pass more basic or complex types as required.  As with basic types, `array` can have a "required" JSON key.  
+Type `array` needs a JSON key of `items`.  Inside an `array` you can pass more basic or complex types as required.  As with basic types, `array` can have a "required" JSON key.
 
 _Note: when passing JSON data as an `array` type, the "items" structure can be repeated as many times as you need._
 
@@ -96,7 +96,7 @@ _Note: when passing JSON data as an `array` type, the "items" structure can be r
 
 #### Object
 
-Type `object` needs a JSON key of `properties`.  Inside an `object` you can pass more basic or complex types as required.  As with basic types, `object` can have a `required` JSON key.  
+Type `object` needs a JSON key of `properties`.  Inside an `object` you can pass more basic or complex types as required.  As with basic types, `object` can have a `required` JSON key.
 
 _Note: unlike with `array`, when passing JSON data as type `object`, the `properties` structure can only be included once._
 
@@ -236,7 +236,7 @@ By default `automaticTypeConversion` is set to `true`.  When `praetorian.validat
 __How?__
 ```sh
 {
-  automaticTypeConversion: false 
+  automaticTypeConversion: false
 }
 ```
 
