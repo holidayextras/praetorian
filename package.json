@@ -26,5 +26,8 @@
   "scripts": {
     "prerelease": "node_modules/deployment-helpers/nodeApps/preRelease.sh",
     "deploy": "./scripts/deploy.sh"
-  }
+  },
+  "owner": "sb-backoffice",
+  "platform": "custom",
+  "ci": "dockyard"
 }
