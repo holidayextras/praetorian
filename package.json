@@ -24,10 +24,11 @@
     "url": "http://github.com/shortbreaks/praetorian.git"
   },
   "scripts": {
+    "ci": "echo 'nothing to do here'",
     "prerelease": "node_modules/deployment-helpers/nodeApps/preRelease.sh",
     "deploy": "./scripts/deploy.sh"
   },
-  "owner": "sb-backoffice",
+  "owner": "sb-backend",
   "platform": "custom",
   "ci": "dockyard"
 }
