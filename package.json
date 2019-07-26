@@ -12,6 +12,7 @@
     "lodash": "4.13.1"
   },
   "devDependencies": {
+    "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
     "vows": "0.7.0"
   },
   "author": {
@@ -21,5 +22,13 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/shortbreaks/praetorian.git"
-  }
+  },
+  "scripts": {
+    "ci": "echo 'nothing to do here'",
+    "prerelease": "node_modules/deployment-helpers/nodeApps/preRelease.sh",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "owner": "sb-backend",
+  "platform": "custom",
+  "ci": "dockyard"
 }
